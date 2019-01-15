@@ -13,6 +13,7 @@ defmodule Catcasts.Repo.Migrations.CreateVideos do
       timestamps()
     end
 
+    create unique_index(:videos, [:video_id])
     create index(:videos, [:user_id])
   end
 end
