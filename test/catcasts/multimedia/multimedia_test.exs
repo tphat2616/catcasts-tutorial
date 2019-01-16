@@ -6,15 +6,30 @@ defmodule Catcasts.MultimediaTest do
   describe "videos" do
     alias Catcasts.Multimedia.Video
 
-    @valid_attrs %{duration: "some duration", thumbnail: "some thumbnail", title: "some title", video_id: "some video_id", view_count: 42}
-    @update_attrs %{duration: "some updated duration", thumbnail: "some updated thumbnail", title: "some updated title", video_id: "some updated video_id", view_count: 43}
+    @valid_attrs %{
+      duration: "some duration",
+      thumbnail: "some thumbnail",
+      title: "some title",
+      video_id: "some video_id",
+      view_count: 42
+    }
+    @update_attrs %{
+      duration: "some updated duration",
+      thumbnail: "some updated thumbnail",
+      title: "some updated title",
+      video_id: "some updated video_id",
+      view_count: 43
+    }
     @invalid_attrs %{duration: nil, thumbnail: nil, title: nil, video_id: nil, view_count: nil}
 
     def video_fixture(attrs \\ %{}) do
-      {:ok, video} =
+      user = user_fixture()
+
+      video_params =
         attrs
         |> Enum.into(@valid_attrs)
-        |> Multimedia.create_video()
+
+      {:ok, video} = Multimedia.create_video(user, video_params)
 
       video
     end
@@ -30,7 +45,9 @@ defmodule Catcasts.MultimediaTest do
     end
 
     test "create_video/1 with valid data creates a video" do
-      assert {:ok, %Video{} = video} = Multimedia.create_video(@valid_attrs)
+      user = user_fixture()
+
+      assert {:ok, %Video{} = video} = Multimedia.create_video(user, @valid_attrs)
       assert video.duration == "some duration"
       assert video.thumbnail == "some thumbnail"
       assert video.title == "some title"
