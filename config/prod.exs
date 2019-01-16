@@ -10,9 +10,18 @@ use Mix.Config
 # which you should run after static files are built and
 # before starting your production server.
 config :catcasts, CatcastsWeb.Endpoint,
-  http: [:inet6, port: System.get_env("PORT") || 4000],
-  url: [host: "example.com", port: 80],
+  http: [port: 8080],
+  load_from_system_env: true,
+  url: [host: "catcasts.com", port: 80],
   cache_static_manifest: "priv/static/cache_manifest.json"
+
+config :catcasts, Catcasts.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  username: System.get_env("DATA_DB_USER"),
+  password: System.get_env("DATA_DB_PASS"),
+  hostname: System.get_env("DATA_DB_HOST"),
+  database: "gonano",
+  pool_size: 10
 
 # Do not print debug messages in production
 config :logger, level: :info
