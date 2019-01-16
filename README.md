@@ -1,20 +1,9 @@
-# Catcasts
+# Tutorial for creating an Elixir Phoenix app with tests
+https://medium.brianemory.com/elixir-phoenix-creating-an-app-part-1-the-setup-6626264be03
 
-To start your Phoenix server:
+## Now updated for Phoenix 1.4 and Elixir 1.8
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.setup`
-  * Install Node.js dependencies with `cd assets && npm install`
-  * Start Phoenix endpoint with `mix phx.server`
-
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
-
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
-
-## Learn more
-
-  * Official website: http://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Mailing list: http://groups.google.com/group/phoenix-talk
-  * Source: https://github.com/phoenixframework/phoenix
+## Problems or questions?
+If you come across any problems, have any questions, find any mistakes, or have
+any suggestions, you can open an issue here, hit me up on Twitter
+(@thebrianemory) or comment on the relevant part on Medium.
