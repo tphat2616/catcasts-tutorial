@@ -52,6 +52,16 @@ defmodule CatcastsWeb.VideoControllerTest do
     end
   end
 
+  describe "show video" do
+    test "shows chosen video", %{conn: conn} do
+      user = user_fixture()
+      video = youtube_video_fixture(user)
+      conn = get(conn, Routes.video_path(conn, :show, video))
+
+      assert html_response(conn, 200) =~ video.title
+    end
+  end
+
   describe "delete video" do
     test "deletes chosen video", %{conn: conn} do
       user = user_fixture()
