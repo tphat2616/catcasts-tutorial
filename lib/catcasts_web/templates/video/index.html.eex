@@ -5,6 +5,16 @@
         Cat Videos
       </div>
     </div>
+    <div class="-mx-3 md:flex mb-6">
+      <div class="md:w-full px-3 text-grey-darkest font-bold uppercase text-sm">
+        Sort by: <%= sort_link @conn, @rummage, [field: :title, ci: true] %> ~ <%= sort_link @conn, @rummage, [field: :view_count] %> ~ <%= sort_link @conn, @rummage, [field: :duration] %>
+      </div>
+    </div>
+    <div class="-mx-3 md:flex mb-6">
+      <div class="md:w-full px-3 text-grey-darkest font-bold uppercase text-base">
+        <%= search_form(@conn, @rummage, [fields: [title: %{label: "", search_type: "ilike"},], button_class: "hidden"]) %>
+      </div>
+    </div>
     <%= for video <- @videos do %>
       <div class="-mx-3 md:flex mb-6">
         <div class="md:w-full px-3">
