@@ -19,9 +19,7 @@ defmodule Catcasts.TestHelpers do
     user
   end
 
-  def youtube_video_fixture(attrs \\ %{}) do
-    user = user_fixture()
-
+  def youtube_video_fixture(%Catcasts.User{} = user, attrs \\ %{}) do
     video_params =
       attrs
       |> Enum.into(%{
