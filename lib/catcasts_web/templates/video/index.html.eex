@@ -19,5 +19,8 @@
         </div>
       </div>
     <% end %>
+    <div class="flex px-3 justify-center">
+      <%= pagination_link(@conn, @rummage) %>
+    </div>
   </div>
 </div>
