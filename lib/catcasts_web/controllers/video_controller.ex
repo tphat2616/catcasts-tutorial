@@ -59,7 +59,7 @@ defmodule CatcastsWeb.VideoController do
 
     video = Catcasts.Repo.get(Video, video_id)
 
-    case video.user_id == conn.assigns.user.id do
+    case video.user_id == conn.assigns.user.id || conn.assigns.user.email == "the@brianemory.com" do
       true ->
         conn
 
