@@ -68,8 +68,8 @@ config :phoenix, :plug_init_mode, :runtime
 
 # Configure your database
 config :catcasts, Catcasts.Repo,
-  username: "thebrianemory",
-  password: "",
+  username: "postgres",
+  password: "123456",
   database: "catcasts_dev",
   hostname: "localhost",
   pool_size: 10

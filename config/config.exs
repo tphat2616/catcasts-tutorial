@@ -31,8 +31,8 @@ config :ueberauth, Ueberauth,
   ]
 
 config :ueberauth, Ueberauth.Strategy.Google.OAuth,
-  client_id: System.get_env("GOOGLE_CLIENT_ID"),
-  client_secret: System.get_env("GOOGLE_CLIENT_SECRET")
+  client_id: "298694241714-ht3pfohiilks9qu1pmgoofi5roktkafl.apps.googleusercontent.com",
+  client_secret: "AoT2_lNAGvigr3Bs6mO8eF6Z"
 
 # Configure Rummage Phoenix
 config :rummage_ecto, Rummage.Ecto,
